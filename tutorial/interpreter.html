@@ -1,0 +1,272 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_TW">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>2. 使用 Python 直譯器 &#8212; Python 3.7.0 說明文件</title>
+    <link rel="stylesheet" href="../_static/pydoctheme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/sidebar.js"></script>
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="在 Python 3.7.0 說明文件 中搜尋"
+          href="../_static/opensearch.xml"/>
+    <link rel="author" title="關於這些文件" href="../about.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜尋" href="../search.html" />
+    <link rel="copyright" title="Copyright" href="../copyright.html" />
+    <link rel="next" title="3. 一個非正式的 Python 簡介" href="introduction.html" />
+    <link rel="prev" title="1. 淺嘗滋味" href="appetite.html" />
+    <link rel="shortcut icon" type="image/png" href="../_static/py.png" />
+    <link rel="canonical" href="https://docs.python.org/3/tutorial/interpreter.html" />
+    
+    <script type="text/javascript" src="../_static/copybutton.js"></script>
+    <script type="text/javascript" src="../_static/switchers.js"></script>
+    
+    
+ 
+
+  </head><body>  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>瀏覽</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">索引</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python 模組索引"
+             >模組</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="3. 一個非正式的 Python 簡介"
+             accesskey="N">下一頁</a> |</li>
+        <li class="right" >
+          <a href="appetite.html" title="1. 淺嘗滋味"
+             accesskey="P">上一頁</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &#187;</li>
+        <li>
+          <span class="language_switcher_placeholder">zh_TW</span>
+          <span class="version_switcher_placeholder">3.7.0</span>
+          <a href="../index.html">Documentation </a> &#187;
+        </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Python 教學</a> &#187;</li>
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>    
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="using-the-python-interpreter">
+<span id="tut-using"></span><h1>2. 使用 Python 直譯器<a class="headerlink" href="#using-the-python-interpreter" title="本標題的永久連結">¶</a></h1>
+<div class="section" id="invoking-the-interpreter">
+<span id="tut-invoking"></span><h2>2.1. 啟動直譯器<a class="headerlink" href="#invoking-the-interpreter" title="本標題的永久連結">¶</a></h2>
+<p>The Python interpreter is usually installed as <code class="file docutils literal notranslate"><span class="pre">/usr/local/bin/python3.7</span></code>
+on those machines where it is available; putting <code class="file docutils literal notranslate"><span class="pre">/usr/local/bin</span></code> in your
+Unix shell’s search path makes it possible to start it by typing the command:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>python3.7
+</pre></div>
+</div>
+<p>能啟動 Python <a class="footnote-reference" href="#id2" id="id1">[1]</a>。因為直譯器存放的目錄是個安裝選項，其他的目錄也是有可能的；請洽談在地的 Python 達人或者系統管理員。（例如：<code class="file docutils literal notranslate"><span class="pre">/usr/local/python</span></code> 是個很常見的另類存放路徑。）</p>
+<p>On Windows machines, the Python installation is usually placed in
+<code class="file docutils literal notranslate"><span class="pre">C:\Python36</span></code>, though you can change this when you’re running the
+installer.  To add this directory to your path,  you can type the following
+command into the command prompt in a DOS box:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="n">path</span><span class="o">=%</span><span class="n">path</span><span class="o">%</span><span class="p">;</span><span class="n">C</span><span class="p">:</span>\<span class="n">python36</span>
+</pre></div>
+</div>
+<p>在主提示符輸入一個 end-of-file 字元（在 Unix 上為 <kbd class="kbd docutils literal notranslate">Control-D</kbd>；在 Windows 上為 <kbd class="kbd docutils literal notranslate">Control-Z</kbd>）會使得直譯器以零退出狀況 (zero exit status) 離開。如果上述的做法沒有效，也可以輸入指令 <code class="docutils literal notranslate"><span class="pre">quit()</span></code> 離開直譯器。</p>
+<p>直譯器的指令列編輯功能有很多，在支援 readline 函式庫的系統上包含：互動編輯、歷史取代、指令補完等功能。最快檢查有無支援 readline 的方法為在第一個 Python 提示符後輸入 <kbd class="kbd docutils literal notranslate">Control-P</kbd>，如果出現嗶嗶聲，就代表有支援；見附錄 <a class="reference internal" href="interactive.html#tut-interacting"><span class="std std-ref">Interactive Input Editing and History Substitution</span></a> 介紹相關的快速鍵。如果什麼事沒有發生，或者出現一個 <code class="docutils literal notranslate"><span class="pre">^P</span></code>，就代表並沒有這指令列編輯功能；此時只能使用 backspace 去除該行的字元。</p>
+<p>這個直譯器使用起來像是 Unix shell：如果它被呼叫時連結至一個 tty 裝置，它會互動式地讀取並執行指令；如果被呼叫時給定檔名為引數或者使用 stdin 傳入檔案內容，它會將這個檔案視為<strong>腳本</strong>來閱讀。</p>
+<p>另一個起動直譯器的方式為 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-c</span> <span class="pre">command</span> <span class="pre">[arg]</span> <span class="pre">...</span></code>，它會執行在 <em>command</em> 裡的指令（們），行為如同 shell 的 <a class="reference internal" href="../using/cmdline.html#cmdoption-c"><code class="xref std std-option docutils literal notranslate"><span class="pre">-c</span></code></a> 選項。因為 Python 的指令包含空白等 shell 用到的特殊字元，通常建議用單引號把 <em>command</em> 包起來。</p>
+<p>有些 Python 模組使用上如腳本般一樣方便。透過 <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">module</span> <span class="pre">[arg]</span> <span class="pre">...</span></code> 可以執行 <em>module</em> 模組的原始碼，就如同直接傳入那個模組的完整路徑一樣的行為。</p>
+<p>當要執行一個腳本檔時，有時候會希望在腳本結束時進入互動模式。此時可在執行腳本的指令加入 <a class="reference internal" href="../using/cmdline.html#cmdoption-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a>。</p>
+<p>所有指令可用的參數都詳記在<a class="reference internal" href="../using/cmdline.html#using-on-general"><span class="std std-ref">Command line and environment</span></a>。</p>
+<div class="section" id="argument-passing">
+<span id="tut-argpassing"></span><h3>2.1.1. 傳遞引數<a class="headerlink" href="#argument-passing" title="本標題的永久連結">¶</a></h3>
+<p>當直擇器收到腳本的名稱和額外的引數後，他們會轉換為由字串所組成的 list（串列）並指派給 <code class="docutils literal notranslate"><span class="pre">sys</span></code> 模組的 <code class="docutils literal notranslate"><span class="pre">argv</span></code> 變數。你可以執行 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sys</span></code> 取得這個串列。這個串列的長度至少為一；當沒有給任何腳本名稱和引數時， <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code> 為空字串。當腳本名為 <code class="docutils literal notranslate"><span class="pre">'-'</span></code>（指標準輸入）時， <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code> 為 <code class="docutils literal notranslate"><span class="pre">'-'</span></code>。當使用 <a class="reference internal" href="../using/cmdline.html#cmdoption-c"><code class="xref std std-option docutils literal notranslate"><span class="pre">-c</span></code></a> <em>command</em> 時， <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code> 為 <code class="docutils literal notranslate"><span class="pre">'-c'</span></code>。當使用 <a class="reference internal" href="../using/cmdline.html#cmdoption-m"><code class="xref std std-option docutils literal notranslate"><span class="pre">-m</span></code></a> <em>module</em> 時， <code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code> 為該模組存在的完整路徑。其餘非 <a class="reference internal" href="../using/cmdline.html#cmdoption-c"><code class="xref std std-option docutils literal notranslate"><span class="pre">-c</span></code></a> <em>command</em> 或 <a class="reference internal" href="../using/cmdline.html#cmdoption-m"><code class="xref std std-option docutils literal notranslate"><span class="pre">-m</span></code></a> <em>module</em> 的選項不會被 Python 直譯器吸收掉，而是留在 <code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> 變數中給後續的 command 或 module 使用。</p>
+</div>
+<div class="section" id="interactive-mode">
+<span id="tut-interactive"></span><h3>2.1.2. 互動模式<a class="headerlink" href="#interactive-mode" title="本標題的永久連結">¶</a></h3>
+<p>When commands are read from a tty, the interpreter is said to be in <em>interactive
+mode</em>.  In this mode it prompts for the next command with the <em>primary prompt</em>,
+usually three greater-than signs (<code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>); for continuation lines it prompts
+with the <em>secondary prompt</em>, by default three dots (<code class="docutils literal notranslate"><span class="pre">...</span></code>). The interpreter
+prints a welcome message stating its version number and a copyright notice
+before printing the first prompt:</p>
+<div class="highlight-shell-session notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> python3.7
+<span class="go">Python 3.7 (default, Sep 16 2015, 09:25:04)</span>
+<span class="go">[GCC 4.8.2] on linux</span>
+<span class="go">Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.</span>
+<span class="gp">&gt;</span>&gt;&gt;
+</pre></div>
+</div>
+<p>接續多行的情況出現在需要多行才能建立完整指令時。舉例來說，像是 <a class="reference internal" href="../reference/compound_stmts.html#if"><code class="xref std std-keyword docutils literal notranslate"><span class="pre">if</span></code></a> 敘述：</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">the_world_is_flat</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">the_world_is_flat</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Be careful not to fall off!&quot;</span><span class="p">)</span>
+<span class="gp">...</span>
+<span class="go">Be careful not to fall off!</span>
+</pre></div>
+</div>
+<p>更多有關互動模式的使用，請見<a class="reference internal" href="appendix.html#tut-interac"><span class="std std-ref">互動模式</span></a>。</p>
+</div>
+</div>
+<div class="section" id="the-interpreter-and-its-environment">
+<span id="tut-interp"></span><h2>2.2. 直譯器與它的環境<a class="headerlink" href="#the-interpreter-and-its-environment" title="本標題的永久連結">¶</a></h2>
+<div class="section" id="source-code-encoding">
+<span id="tut-source-encoding"></span><h3>2.2.1. 原始碼的字元編碼 (encoding)<a class="headerlink" href="#source-code-encoding" title="本標題的永久連結">¶</a></h3>
+<p>預設 Python 原始碼檔案的字元編碼使用 UTF-8。在這個編碼中，世界上多數語言的文字可以同時被使用在字串內容、識別名 (identifier) 及註解中 — 雖然在標準函式庫中只使用 ASCII 字元作為識別名，這也是個任何 portable 程式碼需遵守的慣例。如果要正確地顯示所有字元，您的編輯器需要能夠認識檔案為 UTF-8，並且需要能顯示檔案中所有字元的字型。</p>
+<p>To declare an encoding other than the default one, a special comment line
+should be added as the <em>first</em> line of the file.  The syntax is as follows:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: encoding -*-</span>
+</pre></div>
+</div>
+<p>where <em>encoding</em> is one of the valid <a class="reference internal" href="../library/codecs.html#module-codecs" title="codecs: Encode and decode data and streams."><code class="xref py py-mod docutils literal notranslate"><span class="pre">codecs</span></code></a> supported by Python.</p>
+<p>For example, to declare that Windows-1252 encoding is to be used, the first
+line of your source code file should be:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># -*- coding: cp1252 -*-</span>
+</pre></div>
+</div>
+<p>One exception to the <em>first line</em> rule is when the source code starts with a
+<a class="reference internal" href="appendix.html#tut-scripts"><span class="std std-ref">UNIX 「shebang」 line</span></a>.  In this case, the encoding
+declaration should be added as the second line of the file.  For example:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
+<span class="c1"># -*- coding: cp1252 -*-</span>
+</pre></div>
+</div>
+<p class="rubric">註解</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>在 Unix 中，Python 3.x 直譯器預設安裝不會以 <code class="docutils literal notranslate"><span class="pre">python</span></code> 作為執行檔名稱，以避免與 現有的 Python 2.x 執行檔名稱衝突。</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../contents.html">目錄</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">2. 使用 Python 直譯器</a><ul>
+<li><a class="reference internal" href="#invoking-the-interpreter">2.1. 啟動直譯器</a><ul>
+<li><a class="reference internal" href="#argument-passing">2.1.1. 傳遞引數</a></li>
+<li><a class="reference internal" href="#interactive-mode">2.1.2. 互動模式</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#the-interpreter-and-its-environment">2.2. 直譯器與它的環境</a><ul>
+<li><a class="reference internal" href="#source-code-encoding">2.2.1. 原始碼的字元編碼 (encoding)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>上個主題</h4>
+  <p class="topless"><a href="appetite.html"
+                        title="上一章">1. 淺嘗滋味</a></p>
+  <h4>下個主題</h4>
+  <p class="topless"><a href="introduction.html"
+                        title="下一章">3. 一個非正式的 Python 簡介</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../bugs.html">Report a Bug</a></li>
+      <li>
+        <a href="https://github.com/python/cpython/blob/3.7/Doc/tutorial/interpreter.rst"
+            rel="nofollow">Show Source
+        </a>
+      </li>
+    </ul>
+  </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>瀏覽</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >索引</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python 模組索引"
+             >模組</a> |</li>
+        <li class="right" >
+          <a href="introduction.html" title="3. 一個非正式的 Python 簡介"
+             >下一頁</a> |</li>
+        <li class="right" >
+          <a href="appetite.html" title="1. 淺嘗滋味"
+             >上一頁</a> |</li>
+        <li><img src="../_static/py.png" alt=""
+                 style="vertical-align: middle; margin-top: -1px"/></li>
+        <li><a href="https://www.python.org/">Python</a> &#187;</li>
+        <li>
+          <span class="language_switcher_placeholder">zh_TW</span>
+          <span class="version_switcher_placeholder">3.7.0</span>
+          <a href="../index.html">Documentation </a> &#187;
+        </li>
+
+          <li class="nav-item nav-item-1"><a href="index.html" >Python 教學</a> &#187;</li>
+    <li class="right">
+        
+
+    <div class="inline-search" style="display: none" role="search">
+        <form class="inline-search" action="../search.html" method="get">
+          <input placeholder="Quick search" type="text" name="q" />
+          <input type="submit" value="Go" />
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('.inline-search').show(0);</script>
+         |
+    </li>
+
+      </ul>
+    </div>  
+    <div class="footer">
+    &copy; <a href="../copyright.html">Copyright</a> 2001-2018, Python Software Foundation.
+    <br />
+    The Python Software Foundation is a non-profit corporation.
+    <a href="https://www.python.org/psf/donations/">Please donate.</a>
+    <br />
+    Last updated on 8月 22, 2018.
+    <a href="../bugs.html">Found a bug</a>?
+    <br />
+    Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.7.7.
+    </div>
+
+  </body>
+</html>
